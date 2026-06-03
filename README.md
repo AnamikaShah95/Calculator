@@ -1,4 +1,4 @@
-# <p align="center">[![Simple Calculator Terminal](https://readme-typing-svg.demolab.com?font=Orbitron&size=32&duration=3500&pause=1000&color=A78BFA&center=true&vCenter=true&width=700&height=70&lines=%F0%9F%9A%80+SIMPLE+CALCULATOR;%E2%9A%99%EF%B8%8F+PORTFOLIO+COMMAND+DECK;%E2%9A%A1+SYSTEM+STATUS:+READY)](https://git.io/typing-svg)</p>
+# <p align="center">[![Simple Calculator Terminal](https://readme-typing-svg.demolab.com?font=Orbitron&size=32&duration=3500&pause=1000&color=A78BFA&center=true&vCenter=true&width=700&height=70&lines=%F0%9F%9A%80+SIMPLE+CALCULATOR;%E2%9A%99%EF%B8%80+PYTHON+LANGUAGE;%E2%9A%A1+SYSTEM+STATUS:+READY)](https://git.io/typing-svg)</p>
 
 <p align="center">
   <img src="https://img.shields.io/badge/Language-Python%203-3776AB?style=for-the-badge&logo=python&logoColor=white" alt="Python">
