@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Galactic Arithmetic Chronicles - Portfolio Edition</title>
+<style>
+:root {
+    --bg: #030712;
+    --card: rgba(17, 24, 39, 0.7);
+    --text: #f3f4f6;
+    --accent: #22d3ee;
+    --accent-glow: rgba(34, 211, 238, 0.3);
+    --secondary-accent: #a78bfa;
+    --screen-green: #4ade80;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    color: var(--text);
+    background: radial-gradient(circle at 50% 50%, #0f172a 0%, #020617 100%);
+    min-height: 100vh;
+    padding: 40px 20px;
+    display: flex;
+    align-items: center;
+}
+
+.container {
+    max-width: 1200px;
+    margin: auto;
+    width: 100%;
+}
+
+.panel {
+    background: var(--card);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 24px;
+    padding: 30px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.panel:hover {
+    border-color: rgba(34, 211, 238, 0.2);
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+    padding: 20px 30px;
+    border-bottom: 2px solid rgba(34, 211, 238, 0.2);
+}
+
+.title {
+    font-size: 2.2rem;
+    font-weight: 800;
+    color: var(--text);
+    letter-spacing: -0.5px;
+}
+
+.title span {
+    color: var(--accent);
+    text-shadow: 0 0 15px var(--accent-glow);
+}
+
+.subtitle {
+    font-size: 0.95rem;
+    color: var(--secondary-accent);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: 600;
+    margin-top: 4px;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr;
+    gap: 30px;
+}
+
+h2 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+    color: var(--text);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* Calculator & Mission Styles */
+.calc {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+input, select {
+    background: #1f2937;
+    color: white;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 14px 18px;
+    border-radius: 12px;
+    font-size: 1rem;
+    outline: none;
+    transition: all 0.2s ease;
+}
+
+input[type="number"] {
+    width: 100%;
+    flex: 1;
+}
+
+select {
+    cursor: pointer;
+    font-weight: 600;
+}
+
+input:focus, select:focus {
+    border-color: var(--accent);
+    box-shadow: 0 0 10px var(--accent-glow);
+}
+
+button {
+    background: linear-gradient(135deg, var(--accent) 0%, #06b6d4 100%);
+    color: #020617;
+    font-weight: 700;
+    padding: 14px 28px;
+    border-radius: 12px;
+    border: none;
+    font-size: 0.95rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    box-shadow: 0 4px 15px var(--accent-glow);
+}
+
+button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(34, 211, 238, 0.5);
+}
+
+button:active {
+    transform: translateY(0);
+}
+
+.screen {
+    margin: 25px 0;
+    padding: 25px;
+    text-align: center;
+    font-size: 1.8rem;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
+    border-radius: 16px;
+    background: #040814;
+    color: var(--screen-green);
+    border: 1px solid rgba(74, 222, 128, 0.2);
+    min-height: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.8), 0 0 15px rgba(74, 222, 128, 0.1);
+}
+
+.mission {
+    margin-top: 25px;
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.25);
+    border-left: 4px solid var(--secondary-accent);
+    border-radius: 12px;
+}
+
+.mission h3 {
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+    color: var(--secondary-accent);
+}
+
+#missionText {
+    margin-bottom: 15px;
+    font-size: 1rem;
+    color: #d1d5db;
+}
+
+.btn-secondary {
+    background: transparent;
+    color: var(--secondary-accent);
+    border: 1px solid var(--secondary-accent);
+    box-shadow: none;
+    padding: 10px 20px;
+    font-size: 0.85rem;
+}
+
+.btn-secondary:hover {
+    background: rgba(167, 139, 250, 0.1);
+    box-shadow: 0 4px 15px rgba(167, 139, 250, 0.2);
+    border-color: var(--secondary-accent);
+}
+
+/* Stats Styles */
+.stats {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+    margin-bottom: 30px;
+}
+
+.stat {
+    padding: 18px;
+    border-radius: 16px;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.04);
+    text-align: center;
+}
+
+.stat div {
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: #9ca3af;
+    margin-bottom: 6px;
+}
+
+.stat h3 {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--accent);
+}
+
+.achievements-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.achievement-item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 12px;
+    background: rgba(255, 255, 255, 0.02);
+    border-radius: 12px;
+}
+
+.badge {
+    display: inline-block;
+    background: rgba(34, 211, 238, 0.1);
+    border: 1px solid var(--accent);
+    color: var(--accent);
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    min-width: 150px;
+    text-align: center;
+}
+
+.ach-desc {
+    font-size: 0.9rem;
+    color: #9ca3af;
+}
+
+@media(max-width: 900px){
+    .grid { grid-template-columns: 1fr; }
+    body { padding: 20px 10px; }
+}
+</style>
+</head>
+<body>
+
+<div class="container">
+    <div class="panel header">
+        <div>
+            <div class="title">🚀 Galactic <span>Arithmetic</span> Chronicles</div>
+            <div class="subtitle">Portfolio Command Deck</div>
+        </div>
+    </div>
+
+    <div class="grid">
+        <div class="panel">
+            <h2>⚙️ Mission Console</h2>
+            <div class="calc">
+                <input id="a" type="number" value="59">
+                <select id="op">
+                    <option>+</option>
+                    <option>-</option>
+                    <option>*</option>
+                    <option>/</option>
+                </select>
+                <input id="b" type="number" value="65">
+                <button onclick="calculate()">Calculate</button>
+            </div>
+
+            <div class="screen" id="screen">SYSTEM READY</div>
+
+            <div class="mission">
+                <h3>🎯 Active Objective</h3>
+                <div id="missionText">Loading mission parameter profile...</div>
+                <button class="btn-secondary" onclick="newMission()">Generate New Mission</button>
+            </div>
+        </div>
+
+        <div class="panel">
+            <h2>📊 Commander Status</h2>
+            <div class="stats">
+                <div class="stat"><div>Total XP</div><h3 id="xp">0</h3></div>
+                <div class="stat"><div>Calculations</div><h3 id="count">0</h3></div>
+                <div class="stat"><div>Streak</div><h3 id="streak">0</h3></div>
+                <div class="stat"><div>Rank Title</div><h3 id="ach" style="font-size: 1.2rem; margin-top: 5px; color: var(--secondary-accent);">None</h3></div>
+            </div>
+
+            <h2>🏆 Progression Milestones</h2>
+            <div class="achievements-list">
+                <div class="achievement-item">
+                    <span class="badge">Math Cadet</span>
+                    <span class="ach-desc">Initiate your first successfully verified calculation</span>
+                </div>
+                <div class="achievement-item">
+                    <span class="badge">Gear Master</span>
+                    <span class="ach-desc">Reach 10 complete system calculations</span>
+                </div>
+                <div class="achievement-item">
+                    <span class="badge">Quantum Engineer</span>
+                    <span class="ach-desc">Harness computation nodes across 50 operations</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+let xp = 0, count = 0, streak = 0;
+
+function calculate(){
+    const a = Number(document.getElementById("a").value);
+    const b = Number(document.getElementById("b").value);
+    const op = document.getElementById("op").value;
+    const screen = document.getElementById("screen");
+
+    screen.style.color = "#f59e0b"; // Warning amber color while calculating
+    screen.innerHTML = "COMPUTING VECTOR...";
+
+    setTimeout(() => {
+        let result;
+        try {
+            switch(op){
+                case "+": result = a + b; break;
+                case "-": result = a - b; break;
+                case "*": result = a * b; break;
+                case "/":
+                    if(b === 0) throw Error("CRIT_ERR: DIV_BY_ZERO");
+                    result = (a / b).toFixed(3);
+                    break;
+            }
+            screen.style.color = "var(--screen-green)";
+            screen.innerHTML = "<span style='font-size:0.9rem; color:#9ca3af;'>RESULT VERIFIED</span><br>" + result;
+            count++; 
+            streak++; 
+            xp += 25;
+            updateStats();
+        } catch(e) {
+            screen.style.color = "#ef4444"; // Error Red
+            screen.textContent = e.message;
+        }
+    }, 800); // Snappier response layout
+}
+
+function updateStats(){
+    document.getElementById("xp").textContent = xp;
+    document.getElementById("count").textContent = count;
+    document.getElementById("streak").textContent = streak;
+
+    let ach = "None";
+    if(count >= 1) ach = "Math Cadet";
+    if(count >= 10) ach = "Gear Master";
+    if(count >= 50) ach = "Quantum Engineer";
+    document.getElementById("ach").textContent = ach;
+}
+
+function newMission(){
+    const x = Math.floor(Math.random() * 100);
+    const y = Math.floor(Math.random() * 100);
+    const ops = ["+", "-", "*"];
+    const op = ops[Math.floor(Math.random() * ops.length)];
+    document.getElementById("missionText").textContent = 
+        `Compute vector array: ${x} ${op} ${y} to harness +50 XP matrix elements.`;
+}
+
+// Global hotkey mapping
+window.addEventListener("keydown", e => {
+    if(e.code === "Space"){
+        // Prevent default space action if elements aren't focused inputs
+        if(document.activeElement.tagName !== 'INPUT') {
+            e.preventDefault();
+            calculate();
+        }
+    }
+});
+
+// Initialize first operational objective
+newMission();
+</script>
+</body>
+</html>
