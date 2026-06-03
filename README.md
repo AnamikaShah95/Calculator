@@ -1,4 +1,4 @@
-# <p align="center"><img src="https://readme-typing-svg.demolab.com?font=Orbitron&size=32&duration=3500&pause=1000&color=22D3EE&center=true&vCenter=true&width=700&height=70&lines=🚀+SIMPLE+CALCULATOR;%E2%9A%99%EF%B8%8F+PORTFOLIO+COMMAND+DECK;⚡+SYSTEM+STATUS:+READY" alt="Typing SVG" /></p>
+# <p align="center"><img src="https://readme-typing-svg.demolab.com?font=Orbitron&size=32&duration=3500&pause=1000&color=A78BFA&center=true&vCenter=true&width=700&height=70&lines=🚀+SIMPLE+CALCULATOR;%E2%9A%99%EF%B8%8F+PORTFOLIO+COMMAND+DECK;⚡+SYSTEM+STATUS:+READY" alt="Simple Calculator Terminal" /></p>
 
 <p align="center">
   <img src="https://img.shields.io/badge/Language-Python%203-3776AB?style=for-the-badge&logo=python&logoColor=white" alt="Python">
@@ -12,12 +12,12 @@
 **Simple Calculator** is an interactive, premium portfolio application featuring a high-performance **Python-based arithmetic calculator engine**. It fuses robust pythonic backend logic with a beautifully gamified frontend dashboard, tracking live operational metrics like XP accumulation, calculation streaks, and dynamic milestone unlocks as users compute mathematical vectors.
 
 ## ✨ Core Features
-* **🐍 Python Logic Architecture:** Core calculation sequences, division fail-safes, and floating-point precision formatting are driven by a clean, optimized Python execution layout.
-* **Animated Terminal Feed:** Real-time computations process through a styled monospace matrix screen with distinct visual color states (computing, success, and error).
-* **Unified Cyber-Space Theme:** A polished glassmorphic interface built using native dark CSS variables, glowing focus states, and responsive flex/grid layouts.
-* **Telemetry Objective Generator:** A built-in mission matrix that spins up randomized pythonic equations for user engagement and arithmetic verification.
-* **Progression Metrics:** Tracks live session statistics including overall XP score, total operation counts, and ongoing computation streaks.
-* **Keyboard Shortcuts:** Integrated global key listener mapping the `Spacebar` directly to the verification engine for rapid processing.
+* **Python Engine:** Optimized logic for precise math and error fail-safes.
+* **Terminal Display:** Monospace matrix screen with dynamic color-coded system states.
+* **Neon Aesthetic:** Sleek, dark glassmorphic UI utilizing vibrant purple accents.
+* **Mission Matrix:** Telemetry generator spinning up random objective equations.
+* **Live Analytics:** Real-time tracking of XP scores, calculation counts, and streaks.
+* **Hotkey Control:** Global `Spacebar` mapping for fast, direct keyboard calculations.
 
 ---
 
